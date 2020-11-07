@@ -9,6 +9,7 @@ public class Mobile {
     private Battery battery;
     private Processor processor;
 
+
     @Inject
     public Mobile(Battery battery,Processor processor) {
         this.battery = battery;
@@ -18,5 +19,10 @@ public class Mobile {
 
     public void run(){
         Log.i("Inject","Mobile - Run method");
+    }
+
+    @Inject
+    void setCharger(Charger charger){
+        charger.setCharger(this);
     }
 }
